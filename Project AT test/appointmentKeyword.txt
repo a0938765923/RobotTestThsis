@@ -1,0 +1,26 @@
+*** Settings ***
+Library    SeleniumLibrary
+Library    String    
+Library    Collections
+Resource    ./Keyword.txt
+
+*** Keywords ***
+Set Appointment Info
+    Select Dropdown By Name    Subject    Division of Chest
+    Select Dropdown By Name    Doctor    Chucky
+    Select Calender day    Date    15
+    Select Dropdown By Name    Time    Afternoon diagnosis(14:00~17:00)
+
+Doctor Should Only See Role Of Patient On Appointment Page
+    [Arguments]    ${patientName}
+    @{allPatientInfo} =    Get WebElements    //*[contains(@id,'appointment_name')]
+    :FOR    ${allPatientInfo}    In    @{allPatientInfo}
+    \    ${patientText} =    Get Text    ${allPatientInfo}
+    \    Should Be Equal    ${patientText}    ${patientName}
+
+Select First List And Cancel Appointment
+    Click Element After It Is Visible    (//tr[contains(@class,'ui-selectable-row ng-star-inserted')])[1]
+    ${id} =    Get Element Attribute    (//tr[contains(@class,'ui-selectable-row ng-star-inserted')])[1]    id
+    Click Element After It Is Visible    //span[normalize-space()='Cancel appointment']
+    Click Element After It Is Visible    //span[normalize-space()='Yes']
+    Wait Until Element Is Not Visible    id=${id}    ${shortPeriodOfTime}    error=Item should be deleted.

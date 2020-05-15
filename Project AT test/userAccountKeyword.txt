@@ -1,0 +1,17 @@
+*** Settings ***
+Library    SeleniumLibrary
+Library    String    
+Library    Collections
+Resource    ./Keyword.txt
+
+*** Keywords ***
+Clear Field By Id
+    [Arguments]    ${fieldName}
+    ${fieldText} =    Get Element Attribute    id=${fieldName}    value
+    ${fieldTextLen} =    Get Length    ${fieldText}
+    :FOR    ${index}    In Range    0    ${fieldTextLen}
+    \    Press Key    id=${fieldName}    \\8
+
+Click Save And Is Success
+    Click Element After It Is Visible    //span[normalize-space()='Save Change']
+    Success Should be Visible    Save successfully
