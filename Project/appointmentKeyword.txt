@@ -8,7 +8,7 @@ Resource    ./Keyword.txt
 Set Appointment Info
     Select Dropdown By Name    Subject    Division of Chest
     Select Dropdown By Name    Doctor    Chucky
-    Select Calender day    Date    15
+    Select Calender day    Date    19
     Select Dropdown By Name    Time    Afternoon diagnosis(14:00~17:00)
 
 Doctor Should Only See Role Of Patient On Appointment Page
