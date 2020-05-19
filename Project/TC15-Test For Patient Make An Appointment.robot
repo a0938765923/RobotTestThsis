@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Library    String    
 Library    Collections
+Library    PythonTestLibrary
 Resource    ./Keyword.txt
 Resource    ./appointmentKeyword.txt
 
