@@ -26,5 +26,5 @@ Set Create Account Info
     Select Dropdown By Name    Gender    Male
     Select Dropdown By Name    Role    Patient
     Select Calender day    BirthDate    15
-    Input Text    id=email    testForRobot@gmail.com
+    Input Text    id=email1    testForRobot@gmail.com
     Input Text    id=address    板橋1111號11樓
