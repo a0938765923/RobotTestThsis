@@ -40,7 +40,7 @@ Test For Patient Save Failed
 
 *** Keywords ***
 Doctor Should Only See Role Of Patient On Rental Page
-    @{allPatientInfo} =    Get WebElements    //*[contains(@id,'rental_patientName')]
+    @{allPatientInfo} =    Get WebElements    //*[contains(@id,'rental_patientname')]
     :FOR    ${allPatientInfo}    In    @{allPatientInfo}
     \    ${patientText} =    Get Text    ${allPatientInfo}
     \    Should Be Equal    ${patientText}    mark_robot
