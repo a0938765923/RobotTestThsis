@@ -6,7 +6,7 @@ Library    Collections
 *** Variables ***
 ${shortPeriodOfTime} =    3s
 &{doctorAccount} =    userName=F129642705    password=1224
-&{patientAccount} =    userName=F129642702    password=1224
+&{patientAccount} =    userName=G123456789    password=0101
 &{adminAccount} =	userName=admin    password=admin
 
 *** Keywords ***

@@ -40,10 +40,10 @@ Test For Patient Save Failed
 
 *** Keywords ***
 Doctor Should Only See Role Of Patient On Rental Page
-    @{allPatientInfo} =    Get WebElements    //*[contains(@id,'rental_patientname')]
+    @{allPatientInfo} =    Get WebElements    //*[contains(@id,'rental_patientName')]
     :FOR    ${allPatientInfo}    In    @{allPatientInfo}
     \    ${patientText} =    Get Text    ${allPatientInfo}
-    \    Should Be Equal    ${patientText}    mark_robot
+    \    Should Be Equal    ${patientText}    Gene
 
 Set Rental Information
     Select Dropdown By Name    DeviceName    Wheelchair
