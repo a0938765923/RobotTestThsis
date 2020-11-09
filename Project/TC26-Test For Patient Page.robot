@@ -34,8 +34,6 @@ Test For Patient Save Failed
     Click Tab    Online Service    Rental
     Click Element After It Is Visible    //button[normalize-space()='Make an rental']
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
-    Select Dropdown By Name    Quantity    1
-    Select Calender day    StartDate    15
     Click Save Button And Show Fail V2
 
 *** Keywords ***
