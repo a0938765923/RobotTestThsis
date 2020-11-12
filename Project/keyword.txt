@@ -77,7 +77,7 @@ Click Row By User Account Management
 
 Select Dropdown By Name
     [Arguments]    ${fieldName}    ${dropdownName}    ${default}=${EMPTY}
-    &{newFieldNames} =    Create Dictionary    DeviceName=device    Quantity=quantity    Subject=Select subject    Doctor=Select doctor    Time=Select time    Gender=gender    Role=Patient    Condition=condition    Medications=medication
+    &{newFieldNames} =    Create Dictionary    DeviceName=device    Quantity=quantity    Subject=Select_subject    Doctor=Select_doctor    Time=Select_time    Gender=gender    Role=Patient    Condition=condition    Medications=medication
     # ${newFieldNames} =    Convert To Lowercase    ${fieldName}
     Run Keyword If    '${default}'=='${EMPTY}'    Click Element After It Is Visible    //div[normalize-space()='${fieldName}']//./following-sibling::*//div[contains(normalize-space(),'&{newFieldNames}[${fieldName}]')]
     ...       ELSE    Click Element After It Is Visible    //div[normalize-space()='${fieldName}']//./following-sibling::*//div[contains(normalize-space(),'${default}')]
