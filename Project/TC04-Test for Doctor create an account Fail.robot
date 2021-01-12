@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 *** Variables ***
 ${shortPeriodOfTime} =    3s
 *** Test Cases ***
-Test for Doctor create an account Fail
+Doctor create an account Fail
     Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab     User Account Management
@@ -19,7 +19,7 @@ Test for Doctor create an account Fail
     Set Create Account Info
     Click Save Button And Show Fail V2
 
-Test for Doctor create an account Fail V2
+Doctor create an account Success
     Test By My Test
 
 *** Keywords ***
