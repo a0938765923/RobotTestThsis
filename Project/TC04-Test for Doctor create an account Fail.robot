@@ -11,25 +11,35 @@ Test Teardown    Close Browser
 *** Variables ***
 ${shortPeriodOfTime} =    3s
 *** Test Cases ***
+Doctor create an account Success
+    Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
+    Success Should be Visible    Login successfully
+    Click Tab     User Account Management
+    Click Element After It Is Visible    //button[normalize-space()='Add an account']
+    Create Account Info    name=testForRobotCreatePatient    id=F129642705    gender=Male    role=Patient    birthday=13    email=testForRobot@gmail.com    address=板橋1111號11樓
+    Click Save Button And Show Success
+    Success Should be Visible    Save successfully
+
 Doctor create an account Fail
     Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab     User Account Management
     Click Element After It Is Visible    //button[normalize-space()='Add an account']
-    Set Create Account Info
-    Click Save Button And Show Fail V2
-
-Doctor create an account Success
-    Test By My Test
+    Create Account Info    name=testForRobotCreatePatient    id=${EMPTY}    gender=Male    role=Patient    birthday=13    email=testForRobot@gmail.com    address=板橋1111號11樓
+    Click Save Button
+    Success Should be Visible    Save failed
 
 *** Keywords ***
-Set Create Account Info
-    Input Text    id=name    testForRobotCreatePatient
-    Select Dropdown By Name    Gender    Male
-    Select Dropdown By Name    Role    Patient
-    Select Calender day    BirthDate    15
-    Input Text    id=email1    testForRobot@gmail.com
-    Input Text    id=address    板橋1111號11樓
+Create Account Info
+    [Arguments]    ${name}    ${id}    ${gender}    ${role}    ${birthday}    ${email}    ${address}
+    Input Text    id=name    ${name}
+    Input Text    //*[@id='id']//input    ${id}
+    Select Dropdown By Name    Gender    ${gender}
+    Select Dropdown By Name    Role    ${role}
+    Select Calender day    BirthDate    ${birthday}
+    Input Text    id=email    ${email}
+    Input Text    id=address    ${address}
+    Click Save Button
 
-Test By My Test
-    Set Create Account Info
+Click Save Button
+    Click Element    //span[normalize-space()='Save']

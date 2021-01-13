@@ -22,7 +22,7 @@ Login fail test
     Login To The Page    userName=failAdmin
     Success Should be Visible    Login failed
 
-Log out test
+Logout success test
     Login To The Page    userName=&{adminAccount}[userName]    password=&{adminAccount}[password]
     Success Should be Visible    Login successfully
     Click Button After It Is Visible    //button[normalize-space()='Logout']
