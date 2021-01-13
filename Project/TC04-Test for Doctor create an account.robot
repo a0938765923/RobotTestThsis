@@ -17,7 +17,6 @@ Doctor create an account Success
     Click Tab     User Account Management
     Click Element After It Is Visible    //button[normalize-space()='Add an account']
     Create Account Info    name=testForRobotCreatePatient    id=F129642705    gender=Male    role=Patient    birthday=13    email=testForRobot@gmail.com    address=板橋1111號11樓
-    Click Save Button
     Success Should be Visible    Save successfully
 
 Doctor create an account Fail
@@ -26,7 +25,6 @@ Doctor create an account Fail
     Click Tab     User Account Management
     Click Element After It Is Visible    //button[normalize-space()='Add an account']
     Create Account Info    name=testForRobotCreatePatient    id=${EMPTY}    gender=Male    role=Patient    birthday=13    email=testForRobot@gmail.com    address=板橋1111號11樓
-    Click Save Button
     Success Should be Visible    Save failed
 
 *** Keywords ***
