@@ -12,7 +12,7 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Doctor Should See Self And Patient In Account Page
+Doctor Should See Self And Patient In Account Page
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    User Account Management

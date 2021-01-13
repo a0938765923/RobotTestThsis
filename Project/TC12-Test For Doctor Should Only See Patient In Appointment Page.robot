@@ -13,8 +13,8 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Patient Cancel An Appointment
-    Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
+Doctor Should Only See Patient In Appointment Page
+    Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Appointment
-    Select First List And Cancel Appointment
+    Doctor Should Only See Role Of Patient On Appointment Page    mark_robot

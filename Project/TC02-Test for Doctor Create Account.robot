@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 *** Variables ***
 ${shortPeriodOfTime} =    3s
 *** Test Cases ***
-Doctor create an account Success
+Doctor create account Success
     Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab     User Account Management
@@ -19,7 +19,7 @@ Doctor create an account Success
     Create Account Info    name=testForRobotCreatePatient    id=F129642705    gender=Male    role=Patient    birthday=13    email=testForRobot@gmail.com    address=板橋1111號11樓
     Success Should be Visible    Save successfully
 
-Doctor create an account Fail
+Doctor create account Fail
     Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab     User Account Management

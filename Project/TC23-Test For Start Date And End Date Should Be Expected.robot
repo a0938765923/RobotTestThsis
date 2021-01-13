@@ -13,7 +13,7 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3
 
 *** Test Cases ***
-Test For Start Date And End Date Should Be Expected
+Start Date And End Date Should Be Expected
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Rental

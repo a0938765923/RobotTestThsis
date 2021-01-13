@@ -13,8 +13,8 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Patient Should Only See Self In Appointment Page
+Patient Cancel An Appointment
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Appointment
-    Doctor Should Only See Role Of Patient On Appointment Page     mark_robot
+    Select First List And Cancel Appointment

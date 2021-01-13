@@ -12,7 +12,7 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Chart Should Be Visible When User Click Chart
+Chart Should Be Visible When User Click Chart
     Login To The Page    userName=&{patientAccount}[userName]     password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Medical Record Management

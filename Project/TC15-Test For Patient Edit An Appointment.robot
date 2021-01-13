@@ -13,13 +13,10 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Patient Save Failed
+Patient Edit An Appointment
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Appointment
-    Click Element After It Is Visible    //button[normalize-space()='Make an appointment']
-    Wait Until Element Is Visible On Page    //div[normalize-space()='Appointment Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
-    Select Dropdown By Name    Subject    Division of Chest
-    Select Dropdown By Name    Doctor    Chucky
+    Click Element After It Is Visible    (//tr[contains(@class,'ui-selectable-row ng-star-inserted')])[1]
     Select Calender day    Date    15
-    Click Save Button And Show Fail V2
+    Click Save Button And Show Success

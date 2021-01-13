@@ -13,13 +13,11 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Admin Disable Account
-    Login To The Page    userName=&{adminAccount}[userName]        password=&{adminAccount}[password]
+Doctor Save Failed
+    Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    User Account Management
     Click Element After It Is Visible    //*[contains(@class,'ui-selectable-row')][1]
-    Click Element After It Is Visible    //*[contains(@class,'ui-inputswitch-slider')]
-    Click Save And Is Success
-    Click Button After It Is Visible    //button[normalize-space()='Logout']
-    Login To The Page    A123    0101
-    Success Should be Visible    Login failed
+    Clear Field By Id    email
+    Click Button After It Is Visible    //button[normalize-space()='Save Change']
+    Success Should be Visible    Save failed

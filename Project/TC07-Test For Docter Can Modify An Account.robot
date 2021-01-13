@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    String    
 Library    Collections
 Resource    ./Keyword.txt
-Resource    ./userAccountKeyword.txt
 
 Test Setup    Run Keywords    Open Browser    http://localhost:4200/    chrome
 ...                    AND    Maximize Browser Window
@@ -13,11 +12,15 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Doctor Save Failed
+Docter Can Modify An Account
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
-    Click Tab    User Account Management
-    Click Element After It Is Visible    //*[contains(@class,'ui-selectable-row')][1]
-    Clear Field By Id    email
-    Click Button After It Is Visible    //button[normalize-space()='Save Change']
-    Success Should be Visible    Save failed
+    Click Tab     User Account Management
+    Click Row By User Account Management    Patient    K123456789
+    Input Text    id=address    板橋1122號33樓
+    Click Save And Is Success
+
+*** Keywords ***
+Click Save And Is Success
+    Click Element After It Is Visible    //span[normalize-space()='Save Change']
+    Success Should be Visible    Save successfully

@@ -12,7 +12,7 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Test For Patient Should Only See Myself In Case Page
+Patient Should Only See Myself In Case Page
     Login To The Page    userName=&{patientAccount}[userName]     password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Medical Record Management
