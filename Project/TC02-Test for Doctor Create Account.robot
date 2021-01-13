@@ -37,7 +37,7 @@ Create Account Info
     Select Calender day    BirthDate    ${birthday}
     Input Text    id=email    ${email}
     Input Text    id=address    ${address}
-    Click Save Button
+    Click Account Info Modal Save Button
 
 Click Account Info Modal Save Button
     Click Element    //span[normalize-space()='Save']
