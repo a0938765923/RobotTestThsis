@@ -92,6 +92,3 @@ Click Save Button And Show Fail
     Click Element After It Is Visible    //span[normalize-space()='Save Change']
     Success Should be Visible    Save failed
 
-Click Save Button And Show Fail V2
-    Click Element After It Is Visible    //span[normalize-space()='Save']
-    Success Should be Visible    Save failed

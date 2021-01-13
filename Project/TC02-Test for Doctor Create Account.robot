@@ -39,5 +39,5 @@ Create Account Info
     Input Text    id=address    ${address}
     Click Save Button
 
-Click Save Button
+Click Account Info Modal Save Button
     Click Element    //span[normalize-space()='Save']
