@@ -5,5 +5,5 @@ class PythonTestLibrary:
 
     @keyword(name='Set Throughput')
     def set_throughput(self, _latency, _download_throughput, _upload_throughput):
-        selenium = BuiltIn().get_library('SeleniumLibrary')
+        selenium = BuiltIn().get_library_istance('SeleniumLibrary')
         selenium.driver.set_network_conditions(latency=int(_latency), download_throughput=int(_download_throughput), upload_throughput=int(_upload_throughput))

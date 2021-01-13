@@ -13,13 +13,13 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3
 
 *** Test Cases ***
-Test For Patient Should Only See Myself In Rental Page
+Patient Should Only See Myself In Rental Page
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service   Rental
     Doctor Should Only See Role Of Patient On Rental Page
 
-Test For Patient Make A Rental
+Patient Make A Rental
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Rental
@@ -28,7 +28,7 @@ Test For Patient Make A Rental
     Set Rental Information
     Click Save Button And Show Success
  
-Test For Patient Save Failed
+Patient Save Failed
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Rental
@@ -36,7 +36,7 @@ Test For Patient Save Failed
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
     Click Save Button And Show Fail V2
 
-Test For Patient Can Edit Address And Email
+Patient Can Edit Address And Email
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    User Account Management
@@ -46,7 +46,7 @@ Test For Patient Can Edit Address And Email
     Should Be Equal    ${newEmail}    a0938765923@gmail.com    
     Should Be Equal    ${newAddress}    板橋3333號11樓    
 
-Test For Patient Save Failed
+Patient Save Failed
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    User Account Management
