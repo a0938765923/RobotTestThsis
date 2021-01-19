@@ -34,7 +34,7 @@ Patient Save Failed
     Click Tab    Online Service    Rental
     Click Element After It Is Visible    //button[normalize-space()='Make an rental']
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
-    Click Save Button And Show Fail V2
+    Click Save Button And Show Fail
 
 Patient Can Edit Address And Email
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
@@ -56,7 +56,7 @@ Doctor Should Only See Role Of Patient On Rental Page
 Set Rental Information
     Select Dropdown By Name    DeviceName    Wheelchair
     Select Dropdown By Name    Quantity    1
-    Select Calender day    StartDate    15
+    Select Calender day    StartDate    20
 
 Edit First Row For Address And Email
     [Arguments]    ${addrName}    ${email}
