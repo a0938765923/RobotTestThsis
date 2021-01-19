@@ -83,6 +83,7 @@ Select Dropdown By Name
     ...       ELSE    Click Element After It Is Visible    //div[normalize-space()='${fieldName}']//./following-sibling::*//div[contains(normalize-space(),'${default}')]
     Wait Until Element Is Visible On Page    //*[contains(@class, 'ui-dropdown-items ui-dropdown-list')]    timeout=${shortPeriodOfTime}    error=`${dropdownName}` select dropdown should be visible.
     Click Element    //*[contains(@class,'ng-star-inserted')]//li[normalize-space()='${dropdownName}']
+    Wait Until Element Is Visible On Page    //*[contains(@class, 'ui-dropdown-items ui-dropdown-list')]    timeout=${shortPeriodOfTime}    error=`${dropdownName}` select dropdown should be visible.
 
 Click Save Button And Show Success
     Click Element    //span[normalize-space()='Save']

@@ -19,7 +19,7 @@ Patient Should Only See Myself In Rental Page
     Click Tab    Online Service   Rental
     Doctor Should Only See Role Of Patient On Rental Page
 
-Patient Make A Rental
+Should success when patient make a rental
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Rental
@@ -28,7 +28,7 @@ Patient Make A Rental
     Set Rental Information
     Click Save Button And Show Success
  
-Patient Save Failed
+Should fail when patient make a rental
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Rental
