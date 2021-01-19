@@ -46,14 +46,6 @@ Patient Can Edit Address And Email
     Should Be Equal    ${newEmail}    a0938765923@gmail.com    
     Should Be Equal    ${newAddress}    板橋3333號11樓    
 
-Patient Save Failed
-    Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
-    Click Tab    User Account Management
-    Click Element After It Is Visible    //*[contains(@class,'ui-selectable-row')]
-    Clear Field By Id    email
-    Click Save Button And Show Fail
-
 *** Keywords ***
 Doctor Should Only See Role Of Patient On Rental Page
     @{allPatientInfo} =    Get WebElements    //*[contains(@id,'rental_patientName')]
