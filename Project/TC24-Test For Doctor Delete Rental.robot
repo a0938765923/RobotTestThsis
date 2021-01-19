@@ -13,7 +13,7 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3
 
 *** Test Cases ***
-Doctor Delete A Rental
+Should success when doctor delete a rental
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Rental

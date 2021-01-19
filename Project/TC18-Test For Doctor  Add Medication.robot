@@ -12,7 +12,7 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Doctor Can Add Medication
+Should success when doctor add the medication
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Medical Record Management

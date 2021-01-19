@@ -13,16 +13,15 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Login success test
+Should success when login page
     Login To The Page    userName=&{adminAccount}[userName]    password=&{adminAccount}[password]
-    Set Throughput    1000    81200    81200
     Success Should be Visible    Login successfully
 
-Login fail test
+Should fail when login page
     Login To The Page    userName=failAdmin
     Success Should be Visible    Login failed
 
-Logout success test
+Should success when logout page
     Login To The Page    userName=&{adminAccount}[userName]    password=&{adminAccount}[password]
     Success Should be Visible    Login successfully
     Click Button After It Is Visible    //button[normalize-space()='Logout']

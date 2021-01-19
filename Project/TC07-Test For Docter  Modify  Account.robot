@@ -12,11 +12,15 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Docter can delete an account
+Should success when docter modify patient account
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab     User Account Management
     Click Row By User Account Management    Patient    K123456789
-    Click Element After It Is Visible    //span[normalize-space()='Delete']
-    Click Element After It Is Visible    //span[normalize-space()='Yes']
-    Wait Until Element Is Not Visible    //*[contains(@class,'ng-star-inserted') and normalize-space()='mm']//following-sibling::*[normalize-space()='555666777']
+    Input Text    id=address    板橋1122號33樓
+    Should Success When Click Save Button
+
+*** Keywords ***
+Should Success When Click Save Button
+    Click Element After It Is Visible    //span[normalize-space()='Save Change']
+    Success Should be Visible    Save successfully

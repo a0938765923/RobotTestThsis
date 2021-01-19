@@ -14,7 +14,7 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Patient Make An Appointment
+Should success when patient make an appointment
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    Online Service    Appointment

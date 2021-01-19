@@ -12,11 +12,11 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Patient Should Only See Self On Account Page
+Should success when patient can see their own data on account page
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Should be Visible    Login successfully
     Click Tab    User Account Management
-    Doctor Should Only See Role Of Patient On Account Page    mark_robot 
+    Doctor Should Only See Role Of Patient On Account Page    Gene
 
 *** Keywords ***
 Doctor Should Only See Role Of Patient On Account Page
@@ -25,3 +25,12 @@ Doctor Should Only See Role Of Patient On Account Page
     :FOR    ${allPatientInfo}    In    @{allPatientInfo}
     \    ${patientText} =    Get Text    ${allPatientInfo}
     \    Should Be Equal    ${patientText}    ${patientName}
+
+
+
+
+
+
+    
+
+
