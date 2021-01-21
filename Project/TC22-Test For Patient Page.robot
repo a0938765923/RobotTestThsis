@@ -56,7 +56,7 @@ Doctor Should Only See Role Of Patient On Rental Page
 Set Rental Information
     Select Dropdown By Name    DeviceName    Wheelchair
     Select Dropdown By Name    Quantity    1
-    Select Calender day    StartDate    20
+    Select Calender day    StartDate    22
 
 Edit First Row For Address And Email
     [Arguments]    ${addrName}    ${email}
