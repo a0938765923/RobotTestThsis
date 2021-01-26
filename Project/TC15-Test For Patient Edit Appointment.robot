@@ -13,7 +13,7 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Patient account should be able to edit appointment successfully
+Patient should be able to edit appointment successfully
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
     Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Appointment
