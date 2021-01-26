@@ -15,6 +15,6 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Should success when doctor see their own patient informations in appointment page
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Appointment
     Doctor Should Only See Role Of Patient On Appointment Page    mark_robot

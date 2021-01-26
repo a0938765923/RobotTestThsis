@@ -13,16 +13,16 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Should success when login page
+User with existing account should login successfully
     Login To The Page    userName=&{adminAccount}[userName]    password=&{adminAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
 
-Should fail when login page
+User with nonexistent account should login unsuccessfully 
     Login To The Page    userName=failAdmin
-    Success Should be Visible    Login failed
+    Success Dialog Should Be Visible    Login failed
 
-Should success when logout page
+User should be able to logout successfully
     Login To The Page    userName=&{adminAccount}[userName]    password=&{adminAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Button After It Is Visible    //button[normalize-space()='Logout']
     Wait Until Element Is Visible On Page    //h3[normalize-space()='Login']    timeout=${shortPeriodOfTime}    error=Logout is not success.

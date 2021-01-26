@@ -15,6 +15,6 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Should success when patient cancel the appointment
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Appointment
     Select First List And Cancel Appointment

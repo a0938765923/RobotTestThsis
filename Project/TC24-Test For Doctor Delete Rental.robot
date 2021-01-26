@@ -15,7 +15,7 @@ ${shortPeriodOfTime} =    3
 *** Test Cases ***
 Should success when doctor delete a rental
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Rental
     Delete A Rental For First List
 
@@ -26,5 +26,5 @@ Delete A Rental For First List
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
     Click Element After It Is Visible    //span[normalize-space()='Cancel Rental']
     Click Element After It Is Visible    //span[normalize-space()='Yes']
-    Success Should be Visible    Delete successfully
+    Success Dialog Should Be Visible    Delete successfully
     Wait Until Element Is Not Visible    id=rental_patientName_${id}    timeout=${shortPeriodOfTime}    error=Rental Should Be Deleted.

@@ -14,7 +14,7 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Chart Should Be Visible When User Click Chart
     Login To The Page    userName=&{patientAccount}[userName]     password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Medical Record Management
     Click Button After It Is Visible    //button[normalize-space()='Chart']
     Wait Until Element Is Visible On Page    //div[normalize-space()='Medical Record Chart']    timeout=${shortPeriodOfTime}    error='Medical Record Chart' should be visible.

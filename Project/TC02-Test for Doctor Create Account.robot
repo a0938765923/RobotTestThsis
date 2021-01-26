@@ -11,21 +11,21 @@ Test Teardown    Close Browser
 *** Variables ***
 ${shortPeriodOfTime} =    3s
 *** Test Cases ***
-Should success when create doctor account
+Doctor account should create patient account successfully
     Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab     User Account Management
     Click Element After It Is Visible    //button[normalize-space()='Add an account']
     Create Account Info    name=testForRobotCreatePatient    id=F129642705    gender=Male    role=Patient    birthday=20    email=testForRobot@gmail.com    address=板橋1111號11樓
-    Success Should be Visible    Save successfully
+    Success Dialog Should Be Visible    Save successfully
 
-Should fail when create doctor account
+Doctor account should create patient account unsuccessfully
     Login To The Page   userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab     User Account Management
     Click Element After It Is Visible    //button[normalize-space()='Add an account']
     Create Account Info    name=testForRobotCreatePatient    id=${EMPTY}    gender=Male    role=Patient    birthday=20    email=testForRobot@gmail.com    address=板橋1111號11樓
-    Success Should be Visible    Save failed
+    Success Dialog Should Be Visible    Save failed
 
 *** Keywords ***
 Create Account Info
@@ -37,7 +37,7 @@ Create Account Info
     Select Calender day    BirthDate    ${birthday}
     Input Text    id=email    ${email}
     Input Text    id=address    ${address}
-    Click Account Info Modal Save Button
+    Click Save Button In Account Info Modal
 
-Click Account Info Modal Save Button
+Click Save Button In Account Info Modal
     Click Element    //span[normalize-space()='Save']

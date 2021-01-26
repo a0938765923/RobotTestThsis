@@ -14,7 +14,7 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Doctor can see the patient and their own information in account page
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    User Account Management
     @{allPatientNames} =    Get WebElements    //*[contains(@id,'account_userName')]
     @{allPatientRoles} =    Get WebElements    //*[contains(@id,'account_role')]

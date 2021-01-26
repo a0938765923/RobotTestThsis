@@ -15,9 +15,9 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Should fail when doctor save the modified data
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    User Account Management
     Click Element After It Is Visible    //*[contains(@class,'ui-selectable-row')][1]
     Clear Field By Id    email
     Click Button After It Is Visible    //button[normalize-space()='Save Change']
-    Success Should be Visible    Save failed
+    Success Dialog Should Be Visible    Save failed

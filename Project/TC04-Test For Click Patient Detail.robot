@@ -14,7 +14,7 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Should Success when click patient detail
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    User Account Management
     @{expectedPatientDetail}    Create List
     @{patientDetails} =    Get WebElements    //*[contains(@class,'autoNewline')]

@@ -14,7 +14,7 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Test For Click Doctor Detail Is Correct
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    User Account Management
     ${id} =    Get Element Attribute    (//*[contains(@class,'ui-selectable-row')])[1]    id
     @{expectlPatientDetail}    Create List    

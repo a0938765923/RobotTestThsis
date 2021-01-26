@@ -14,4 +14,4 @@ Clear Field By Id
 
 Click Save And Is Success
     Click Element After It Is Visible    //span[normalize-space()='Save Change']
-    Success Should be Visible    Save successfully
+    Success Dialog Should Be Visible    Save successfully

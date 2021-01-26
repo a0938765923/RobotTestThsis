@@ -12,14 +12,14 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Should success when patient can see their own data on account page
+Patient should only see their own data on account page
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    User Account Management
-    Doctor Should Only See Role Of Patient On Account Page    Gene
+    Patient Should Only See Their Own Data On Account Page    Gene
 
 *** Keywords ***
-Doctor Should Only See Role Of Patient On Account Page
+Patient Should Only See Their Own Data On Account Page
     [Arguments]    ${patientName}
     @{allPatientInfo} =    Get WebElements    //*[contains(@id,'account_userName')]
     :FOR    ${allPatientInfo}    In    @{allPatientInfo}

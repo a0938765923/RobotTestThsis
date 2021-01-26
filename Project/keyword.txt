@@ -33,7 +33,7 @@ Login To The Page
     Click Button After It Is Visible    //button[normalize-space()='Login']
     sleep    1
 	
-Success Should be Visible
+Success Dialog Should Be Visible
     [Arguments]    ${message}
     Wait Until Page Contains Element    //*[@class='ui-toast-summary' and normalize-space()='${message}']    ${shortPeriodOfTime}    error=Login successfully should be shown.
     Wait Until Element Is Visible    //*[@class='ui-toast-summary' and normalize-space()='${message}']    ${shortPeriodOfTime}    error=Login successfully should be shown.
@@ -86,9 +86,9 @@ Select Dropdown By Name
 
 Click Save Button And Show Success
     Click Element    //span[normalize-space()='Save']
-    Success Should be Visible    Save successfully
+    Success Dialog Should Be Visible    Save successfully
 
 Click Save Button And Show Fail
     Click Element After It Is Visible    //span[normalize-space()='Save Change']
-    Success Should be Visible    Save failed
+    Success Dialog Should Be Visible    Save failed
 

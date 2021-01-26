@@ -12,9 +12,9 @@ Test Teardown    Close All Browsers
 ${shortPeriodOfTime} =    3s
 
 *** Test Cases ***
-Should success when doctor add the medication
+Doctor should be able to add the medication successfully
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Medical Record Management
     Click Element After It Is Visible    (//tr[contains(@class,'ui-selectable-row ng-star-inserted')])[1]
     Click Element After It Is Visible    //button[normalize-space()='Add a record']
@@ -22,4 +22,4 @@ Should success when doctor add the medication
     Input Text    //input[contains(@class,'ng-star-inserted')]    FM2
     Input Text    (//label[normalize-space()='dose:']/../following-sibling::div//input)[1]    3
     Click Element After It Is Visible    //span[normalize-space()='Save']
-    Success Should be Visible    Save successfully
+    Success Dialog Should Be Visible    Save successfully

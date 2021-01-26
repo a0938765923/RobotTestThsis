@@ -14,7 +14,7 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Should success when docter modify patient account
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab     User Account Management
     Click Row By User Account Management    Patient    K123456789
     Input Text    id=address    板橋1122號33樓
@@ -23,4 +23,4 @@ Should success when docter modify patient account
 *** Keywords ***
 Should Success When Click Save Button
     Click Element After It Is Visible    //span[normalize-space()='Save Change']
-    Success Should be Visible    Save successfully
+    Success Dialog Should Be Visible    Save successfully

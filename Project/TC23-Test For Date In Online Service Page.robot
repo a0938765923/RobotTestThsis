@@ -15,7 +15,7 @@ ${shortPeriodOfTime} =    3
 *** Test Cases ***
 Start Date And End Date Should Be Expected
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Rental
     Click Element After It Is Visible    //button[normalize-space()='Make an rental']
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.

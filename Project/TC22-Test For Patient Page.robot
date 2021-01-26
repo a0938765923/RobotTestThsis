@@ -13,32 +13,32 @@ Test Teardown    Close Browser
 ${shortPeriodOfTime} =    3
 
 *** Test Cases ***
-Patient Should Only See Myself In Rental Page
+Patient Should Only See their own data In Rental Page
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service   Rental
     Doctor Should Only See Role Of Patient On Rental Page
 
-Should success when patient make a rental
+Patient should be able to make a rental successfully
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Rental
     Click Element After It Is Visible    //button[normalize-space()='Make an rental']
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
     Set Rental Information
     Click Save Button And Show Success
  
-Should fail when patient make a rental
+Patient should be able to make a rental unsuccessfully
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Online Service    Rental
     Click Element After It Is Visible    //button[normalize-space()='Make an rental']
     Wait Until Element Is Visible On Page    //div[normalize-space()='Rental Detail']    ${shortPeriodOfTime}    error=Appointment Detail should be visible.
     Click Save Button And Show Fail
 
-Patient Can Edit Address And Email
+Patient should be able to edit address and email successfully
     Login To The Page    userName=&{patientAccount}[userName]    password=&{patientAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    User Account Management
     Edit First Row For Address And Email    addrName=板橋3333號11樓            email=a0938765923@gmail.com
     ${newEmail} =    Get Text    //*[contains(@id,'account_email')]

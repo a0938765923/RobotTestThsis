@@ -14,7 +14,7 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Should success when docter delete account
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab     User Account Management
     Click Row By User Account Management    Patient    K123456789
     Click Element After It Is Visible    //span[normalize-space()='Delete']

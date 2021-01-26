@@ -14,14 +14,14 @@ ${shortPeriodOfTime} =    3s
 *** Test Cases ***
 Doctor Can Modify Medication
     Login To The Page    userName=&{doctorAccount}[userName]    password=&{doctorAccount}[password]
-    Success Should be Visible    Login successfully
+    Success Dialog Should Be Visible    Login successfully
     Click Tab    Medical Record Management
     Click Element After It Is Visible    (//tr[contains(@class,'ui-selectable-row ng-star-inserted')])[1]
     Click Element After It Is Visible    (//*[contains(@id,'medical_condition')])[1]
     Clear Field By Class
     Input Text    //input[contains(@class,'ui-autocomplete-input')]    FM2
     Click Element After It Is Visible    //span[normalize-space()='Save']
-    Success Should be Visible    Save successfully
+    Success Dialog Should Be Visible    Save successfully
 
 *** Keywords ***
 Clear Field By Class
