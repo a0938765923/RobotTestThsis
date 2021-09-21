@@ -25,5 +25,5 @@ Select First List And Cancel Appointment
     Click Element After It Is Visible    //span[normalize-space()='Yes']
     Wait Until Element Is Not Visible    id=${id}    ${shortPeriodOfTime}    error=Item should be deleted.
 
-    A Test
-        Set Appointment Info
+A Test
+    Set Appointment Info
